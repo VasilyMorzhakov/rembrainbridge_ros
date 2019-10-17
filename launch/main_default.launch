@@ -1,0 +1,9 @@
+<launch>
+
+    <node pkg="rembrainbridge_ros" name="rembrain_bridge_main" type="main.py" output="screen" respawn="true">
+	<param name="SERVER_ADDRESS" value="ws://0.0.0.0:00" />
+	<param name="LOGIN" value="LOGIN_HERE" />
+	<param name="PASSWORD" value="PASSWORD_HERE" />
+	<param name="ROBOT_ID" value="ROBOT_ID_HERE" />
+    </node>
+</launch>

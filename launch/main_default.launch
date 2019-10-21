@@ -5,5 +5,9 @@
 	<param name="LOGIN" value="LOGIN_HERE" />
 	<param name="PASSWORD" value="PASSWORD_HERE" />
 	<param name="ROBOT_ID" value="ROBOT_ID_HERE" />
+        <param name="width" value="640" />
+	<param name="height" value="480" />
+	<param name="rgb_topic" value="camera/image_raw" />
+	<param name="depth_topic" value="camera/image_depth" />
     </node>
 </launch>

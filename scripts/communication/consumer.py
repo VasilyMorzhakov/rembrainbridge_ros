@@ -6,7 +6,6 @@ import numpy
 consumers=[]
 
 def SendImage(buffer):
-
     for i in range(len(consumers)):
         consumers[i].sendByUdp(buffer)
     return
@@ -25,13 +24,14 @@ class Consumer():
     def start(self):
         self.sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
-        #self.sock.bind(server_address)
         return
     def stop(self):
         self.sock.close()
         return
     def sendByUdp(self,buffer):
-        buf = bytes(buffer)
+
+        buf = buffer.tobytes()
+        
         while len(buf) > 0:
             s = 0
             e = self.chunk_size

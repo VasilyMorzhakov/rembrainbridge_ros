@@ -48,6 +48,7 @@ def insertMetaData(buf,data):
 
     sha1 = hashlib.sha1()
     sha1.update(result)
+
     sha1_buf = numpy.frombuffer(sha1.hexdigest().encode('utf-8'), dtype=numpy.uint8)
     result[offset + 4:offset + 4 + SHA1_HEX_LENGTH] = sha1_buf[:]
     return result

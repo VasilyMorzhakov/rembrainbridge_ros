@@ -1,7 +1,7 @@
 import socketio
 import time
 import uuid
-
+import sys
 
 class connection_manager:
 
@@ -62,7 +62,7 @@ class connection_manager:
         
         print('disconnected')
         #exit the node
-        os.exit(0)
+        sys.exit(0)
 
     #main handler
     def message_event(self,message):

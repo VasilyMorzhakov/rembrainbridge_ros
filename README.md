@@ -32,7 +32,7 @@ Dependencies:
 Install python packages needed for running python scripts:
 ```
 cd ~/catkin_ws/src/rembrainbridge_ros/
-sudo pip install requirements.txt
+sudo -H pip install -r requirements.txt
 ```
 
 Install ROS dependencies:

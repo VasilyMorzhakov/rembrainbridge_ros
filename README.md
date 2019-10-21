@@ -59,14 +59,14 @@ roslaunch rembrainbridge_ros main.launch
 
 ### Launch parameters
 
-- ***SERVER_ADDRESS*** - remote server name to connect
-- ***LOGIN*** - login robots uses to connect
-- ***PASSWORD*** - password
-- ***ROBOT_ID*** - unique robot identificator
-- ***width*** - RGB image width, which should be the same for depth images
-- ***height*** - height
-- ***rgb_topic*** - name of the topic with RGB images
-- ***depth_ropic*** - name of the topic with depth images
+- **SERVER_ADDRESS** - remote server name to connect
+- **LOGIN** - login robots uses to connect
+- **PASSWORD** - password
+- **ROBOT_ID** - unique robot identificator
+- **width** - RGB image width, which should be the same for depth images
+- **height** - height
+- **rgb_topic** - name of the topic with RGB images
+- **depth_ropic** - name of the topic with depth images
 
 ## License
 

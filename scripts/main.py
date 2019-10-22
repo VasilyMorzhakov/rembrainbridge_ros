@@ -12,6 +12,7 @@ from communication import jpeg_meta
 
 import time
 import config
+import os
 
 global width
 global height
@@ -108,9 +109,10 @@ if __name__ == '__main__':
     print('start node')
 
     #get parameters
-    server_address=str(rospy.get_param('/rembrain_bridge_main/SERVER_ADDRESS'))#to string
-    login=str(rospy.get_param('/rembrain_bridge_main/LOGIN'))#to string 
-    password=str(rospy.get_param('/rembrain_bridge_main/PASSWORD'))#to string
+    server_address=os.environ["ROBOT_SERVER"]
+    login=os.environ["ROBOT_LOGIN"]
+    password=os.environ["ROBOT_PASSWORD"]
+
     robot_id=str(rospy.get_param('/rembrain_bridge_main/ROBOT_ID'))#to string
     width=int(rospy.get_param('/rembrain_bridge_main/width'))
     height=int(rospy.get_param('/rembrain_bridge_main/height'))

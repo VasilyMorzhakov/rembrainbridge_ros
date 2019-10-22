@@ -1,0 +1,7 @@
+--- # parameters for the node
+ROBOT_ID: 911a0685-5c4b-4f1e-901c-7724a1f2c562
+width: 640
+height: 480
+rgb_topic: camera/image_raw
+depth_topic: camera/image_depth
+input_topics: [topic1,topic2]

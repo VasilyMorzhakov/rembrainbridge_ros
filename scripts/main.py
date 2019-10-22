@@ -13,12 +13,14 @@ from communication import jpeg_meta
 import time
 import config
 import os
+import sys
 
 global width
 global height
 global rgb_topic
 global depth_topic
-import sys
+global input_topics
+
 
 bridge=CvBridge()#cv2-ros bridge for image convertion
 
@@ -87,9 +89,12 @@ def callback_depth(data):
         cv_image=cv2.resize(cv_image,(width,height))
 
    
-    height,width,channels=cv_image.shape   
     #rospy.loginfo('depth image received '+str(width)+' '+str(height))
 
+def callback_sensor_input(data,topic_name):
+
+    rospy.loginfo('sensor input received, topic: '+topic_name)
+    return 
 
 #start listening
 def listener():
@@ -97,6 +102,10 @@ def listener():
     rospy.init_node('rembrain_bridge_main', anonymous=True)
 
     rospy.Subscriber(rgb_topic,Image,callback_rgb,(width,height))
+
+    for i in range(len(input_topics)):
+        topic=str(input_topics[i])
+        rospy.Subscriber(topic,String,callback_sensor_input,topic)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
@@ -118,13 +127,8 @@ if __name__ == '__main__':
     height=int(rospy.get_param('/rembrain_bridge_main/height'))
     rgb_topic=rospy.get_param('/rembrain_bridge_main/rgb_topic')
     depth_topic=rospy.get_param('/rembrain_bridge_main/depth_topic')
+    input_topics=rospy.get_param('/rembrain_bridge_main/input_topics')
     
-
-    print('width '+str(width))
-    print('height '+str(height))
-
-    print('server_address: '+server_address)
-    print('robot_id: '+robot_id)
 
     #register robot in the system
     register(server_address,login,password,robot_id)    

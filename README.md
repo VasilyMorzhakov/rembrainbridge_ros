@@ -51,7 +51,7 @@ export ROBOT_SERVER="type server address here"
 export ROBOT_LOGIN="type login here"
 export ROBOT_PASSWORD="type password here"
 ```
-And change launch parameters described below in main.launch.
+And change launch parameters described below in params.yaml.
 
 Then you can run the streamer by roslaunch:
 
@@ -66,7 +66,7 @@ roslaunch rembrainbridge_ros main.launch
 - **height** - height
 - **rgb_topic** - name of the topic with RGB images
 - **depth_topic** - name of the topic with depth images
-- **input_topics** - list of input publishers
+- **input_topics** - list of input topics, message type is expetected to be String
 
 ## License
 
